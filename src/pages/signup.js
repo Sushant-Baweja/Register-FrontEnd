@@ -7,11 +7,11 @@ import { Button } from '@material-ui/core';
 import TextField from '@material-ui/core/TextField';
 
 const defaultUserData = {
-    Name: "",
+    name: "",
     username: "",
-    Password: "",
-    ConfirmPassword: "",
-    ZipCode: "",
+    password: "",
+    confirmpassword: "",
+    zipcode: "",
     ProfileImage: null
 
 }
@@ -28,15 +28,15 @@ const SignUp = () => {
     const validateInputs = () => {
         let hasErros = false;
         let Errors = [];
-        if (userInfo.Password.length < 5) {
+        if (userInfo.password.length < 5) {
             hasErros = true
             Errors.push("Passwords must be greater than 5 digits!!!")
         }
-        if (userInfo.Password !== userInfo.ConfirmPassword) {
+        if (userInfo.password !== userInfo.confirmpassword) {
             hasErros = true
             Errors.push("Passwords do not Match!!!")
         }
-        if (userInfo.ZipCode.length > 6) {
+        if (userInfo.zipcode.length > 6) {
             hasErros = true
             Errors.push("ZipCode length should be less than 7!!!")
         }
@@ -119,8 +119,8 @@ const SignUp = () => {
                                     size="small"
                                     type="username"
                                     label="username"
-                                    name="UserName"
-                                    value={userInfo.UserName}
+                                    name="username"
+                                    value={userInfo.username}
                                     onChange={onChangeHandle}
                                 />
                             </div><br />
@@ -131,8 +131,8 @@ const SignUp = () => {
                                     type="name"
                                     size="small"
                                     label="Name"
-                                    name="Name"
-                                    value={userInfo.Name}
+                                    name="name"
+                                    value={userInfo.name}
                                     onChange={onChangeHandle}
                                 />
                             </div><br />
@@ -143,8 +143,8 @@ const SignUp = () => {
                                     size="small"
                                     type="Password"
                                     label="Password"
-                                    name="Password"
-                                    value={userInfo.Password}
+                                    name="password"
+                                    value={userInfo.password}
                                     onChange={onChangeHandle}
                                 />
                             </div><br />
@@ -154,8 +154,8 @@ const SignUp = () => {
                                     size="small"
                                     type="Password"
                                     label="ConfirmPassword"
-                                    name="ConfirmPassword"
-                                    value={userInfo.ConfirmPassword}
+                                    name="confirmpassword"
+                                    value={userInfo.confirmpassword}
                                     onChange={onChangeHandle}
                                 />
                             </div>
@@ -166,8 +166,8 @@ const SignUp = () => {
                                     size="small"
                                     type="Number"
                                     label="Zip Code"
-                                    name="ZipCode"
-                                    value={userInfo.ZipCode}
+                                    name="zipcode"
+                                    value={userInfo.zipcode}
                                     onChange={onChangeHandle}
                                 />
                             </div><br />
