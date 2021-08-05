@@ -34,11 +34,11 @@ const SignUp = () => {
         }
         if (userInfo.Password !== userInfo.ConfirmPassword) {
             hasErros = true
-            Errors.push("Passwordds do not Match!!!")
+            Errors.push("Passwords do not Match!!!")
         }
         if (userInfo.ZipCode.length > 6) {
             hasErros = true
-            Errors.push("Length should be less than 7!!!")
+            Errors.push("ZipCode length should be less than 7!!!")
         }
 
         setErrors(Errors)
@@ -69,16 +69,17 @@ const SignUp = () => {
 
     const onSubmitUserHandler = (event) => {
         event.preventDefault();
-        if (validateInputs()) {
+        if (!validateInputs()) {
             axios.post(userUrl, userInfo, {
                 onUploadProgress: progressEvent => console.log("uploaded progress: " + (progressEvent.loaded / progressEvent.total * 100) + "%")
             }).then(res => {
                 setSuccessfull(true)
                 console.log("Submited SuccessFully");
+                setErrors([]);
+                setSelectedFile(null);
+                setuserInfo(defaultUserData);
             });
         }
-        setSelectedFile(null);
-        setuserInfo(defaultUserData);
     }
 
     if (successfull) {
