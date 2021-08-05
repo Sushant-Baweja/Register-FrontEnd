@@ -89,7 +89,7 @@ const SignUp = () => {
                 <CssBaseline />
 
                 <Box className="rounded-lg shadow-lg pt-6" sx={{ bgcolor: '#ffff', height: '80vh' }} >
-                    <header className=" text-2xl font-extrabold">Tekdi technologies user Registration</header>
+                    <header className=" text-2xl font-extrabold">User Registration</header>
                     <div class=" justify-center mt-8 content-center">
                         User Registered Successfully
                     </div>
@@ -97,18 +97,17 @@ const SignUp = () => {
                 </Box>
             </Container>
         </div>)
-    }
+    }    
 
     return (
-        <div class="bg-green-600 h-screen text-center justify-center" >
-
-            <Container maxWidth="sm">
+        <div className="bg-green-600 h-screen text-center justify-center" >     
+            <Container maxWidth="lg">
                 <CssBaseline />
 
                 <Box className="rounded-lg shadow-lg p-6" sx={{ bgcolor: '#ffff' }} >
-                    <header className=" text-2xl font-extrabold">Tekdi technologies user Registration</header>
-                    <div class=" justify-center mt-8 content-center">
-                        {selectedFile && <img src={selectedFile} alt="" />}
+                    <header className=" text-2xl font-extrabold">User Registration</header>
+                    <div className=" justify-center mt-8 content-center">
+                        <img className="p-6" height="150px" width="150px" src={selectedFile} alt="" style={{ margin: "auto"}} />
                         <input type="file" name="profileImage" onChange={onImageChangeHandler} />
                         <form onSubmit={onSubmitUserHandler}>
                             {errors.map(error => <div >{error}</div>)}
