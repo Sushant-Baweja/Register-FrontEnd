@@ -1,14 +1,9 @@
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
-import './signUp.css';
-import Header from './header';
 import SignUp from './signup';
 
 function App() {
   return (
-    <Router>
-      <div>
-        <Header />
-      </div>
+    <Router>      
     <Switch>
       <Route path="/">
         <SignUp />
